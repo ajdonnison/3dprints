@@ -63,10 +63,6 @@ module basePlate() {
                     cylinder(r=HangerGap/2, h=Thickness);
                 }
             }
-            // Add a drain hole
-            translate([BasePlateWidth-Thickness, FrontOuterRadius, 0]) {
-                cylinder(r=HoleRadius*2, h=Thickness);
-            }
             // Add the mounting holes
             translate([HoleOffset,HoleOffset,0]){
                 cylinder(r=HoleRadius, h=Thickness);
@@ -113,6 +109,11 @@ module holster() {
         cylinder(r=FrontRadius,h=FrontWidth + Thickness/2);
         translate([-1 * FrontOuterRadius,-1 * FrontOuterRadius,0]) {
             cube([FrontOuterRadius,BasePlateWidth,FrontWidth + Thickness/2]);
+        }
+        translate([FrontOuterRadius, 0, 0]){
+            rotate([0,-90,0]){
+                cylinder(r=HoleRadius*2, h=Thickness*2);
+            }
         }
     }
     // Cone connecting wider part with narrow neck
