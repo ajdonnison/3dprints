@@ -84,13 +84,16 @@ module basePlate() {
 }
 
 module supportStrut() {
-    translate([FrontOuterRadius,-1*Thickness,0]){
-        intersection() {
-            cube([HangerLength/2,Thickness,HangerLength/2]);
-            rotate([0,90,90]) {
-                cylinder(r=HangerLength/2, h=Thickness);
+    difference(){
+        translate([FrontOuterRadius-Thickness/2,-1*Thickness/2,0]){
+            intersection() {
+                cube([HangerLength/2,Thickness,HangerLength/2]);
+                rotate([0,90,90]) {
+                    cylinder(r=HangerLength/2, h=Thickness);
+                }
             }
         }
+        cylinder(r=FrontOuterRadius, h=HangerLength/2);
     }
 }
 
