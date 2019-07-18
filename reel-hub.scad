@@ -10,7 +10,6 @@ $fs=1;
 
 BearingDiameter = 22;
 BearingID = 8;
-BearingClearance = 12; // Minimum clearance required to ensure inner sleeve is not covered
 BearingHeight = 7;
 MinReelDiameter=48;
 MaxReelDiameter=55;
@@ -19,7 +18,7 @@ WallThickness = 3;
 
 // Add 2% to the radius to compensate for the interior polygon effect
 BearingOuterRadius = BearingDiameter * 1.02 / 2;
-BearingInnerRadius = BearingClearance * 1.02 / 2;
+BearingInnerRadius = BearingOuterRadius - WallThickness;
 
 // Outer reel cone and top plate
 difference(){
