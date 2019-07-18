@@ -12,8 +12,8 @@ $fs = 1;
 BPWidth = 50;
 BPDepth = 25;
 BPHeight = 10;
-PinR = 2;
-HoleR = 1.6;
+PinDiameter = 4;
+HoleDiameter = 3.2;
 PinSep = 23;
 HoleSep = 35;
 PinOff = 5;
@@ -21,21 +21,29 @@ HoleOff = 17;
 PinH = 6;
 Wall = 4;
 
+FudgeFactor = 2;
+
 in = 25.4;
 
 // Standoff dimensions
 SOHeight = 58;
 SOWidth = 25;
 SODepth = 20;
-SOHoleR = 3.3;
+SOHoleDiameter = 6.4; // The width of the bolt used.
 SOOffset = 2;
-SOCollarR = 5;
+SOCollarDiameter = 12; // Max width of the inner bushing of the bearing
 
 // Nut head
 NHDepth = 5;
 NHWidth = 7/16*in;
 NHDiameter = NHWidth / cos(30);
-NHR = NHDiameter/2;
+NHR = NHDiameter * (1 + FudgeFactor/100) / 2;
+
+// Various adjusted radii
+PinR = PinDiameter/2*(1+FudgeFactor/100);
+HoleR = HoleDiameter/2*(1+FudgeFactor/100);
+SOHoleR = SOHoleDiameter/2*(1+FudgeFactor/100);
+SOCollarR = SOCollarDiameter/2*(1+FudgeFactor/100);
 
 // Base Plate
 difference(){
