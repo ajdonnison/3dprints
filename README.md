@@ -4,20 +4,26 @@ This repo contains a set of files generated to provide useful prints.
 
 ## Files
 
-* bearing-blank.scad
-* feeder.scad
-* funnel_closer.scad
-* funnel.scad
-* gasket.scad
-* holster.scad
-* rattrap1.scad
-* reel-adapter.scad
-* reel-holder.scad
-* reel-hub.scad
+bearing-blank.scad
+collet.scad
+feeder.scad
+funnel_closer.scad
+funnel.scad
+gasket.scad
+holster.scad
+rattrap1.scad
+reel-adapter.scad
+reel-holder.scad
+reel-hub.scad
+spanner.scad
 
 ### bearing-blank.scad
 
 Simple blank for a typical skateboard wheel bearing, used to mock up other designs that use these.
+
+### collect.scad
+
+When using a 1/4" bolt for the reel adapter, provides a secure connection to the bearing
 
 ### feeder.scad
 
@@ -59,3 +65,6 @@ An adjusted reel holder that replaces the one that is built into the FlashForge 
 
 You need two of these and two skateboard wheel bearings to make up the reel hub assembly that is used with the above holder.  The hubs are truncated cones that match the internal width of most reels - or at least most that I've tried so far.  Each hub needs a bearing pressed into it - you may need to heat the hub first.
 
+### spanner.scad
+
+Simple tool to fit the hex head of the bolt used in the reel holder assembly.
