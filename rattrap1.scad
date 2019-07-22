@@ -8,16 +8,16 @@ $fs = 1;
 difference() {
     cylinder(h=15,r=46);
     cylinder(h=15,r=44.5);
-    translate([-46,-1,0]) {
-      cube([92,2,15]);
+    translate([-60,-1,0]) {
+      cube([120,2,15]);
     }
 }
-translate([-46,-46,0]) {
-    cube([92,2,15]);
+translate([-60,-46,0]) {
+    cube([120,2,15]);
 }
 
-translate([-46,44,0]) {
-    cube([92,2,15]);
+translate([-60,44,0]) {
+    cube([120,2,15]);
 }
  
 difference() {
