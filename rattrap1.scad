@@ -5,43 +5,62 @@
 $fa = 1;
 $fs = 1;
 
+PipeID = 87;
+PipeOD = 90;
+Width = 2;
+StandWidth = 20;
+StandLength = 120;
+PlateWidth = 12;
+
+IR = PipeID/2;
+OR = PipeOD/2;
+
+// Stand circular part 
 difference() {
-    cylinder(h=15,r=46);
-    cylinder(h=15,r=44.5);
-    translate([-60,-1,0]) {
-      cube([120,2,15]);
+    cylinder(h=StandWidth,r=OR+Width);
+    cylinder(h=StandWidth,r=OR);
+    translate([-1*StandLength/2,-1*Width/2,0]) {
+      cube([StandLength,Width,StandWidth]);
     }
-}
-translate([-60,-46,0]) {
-    cube([120,2,15]);
 }
 
-translate([-60,44,0]) {
-    cube([120,2,15]);
+// Lower stand base
+translate([-1*StandLength/2,-1*(OR+Width),0]) {
+    cube([StandLength,Width,StandWidth]);
+}
+
+// Upper stand base
+translate([-1*StandLength/2,OR,0]) {
+    cube([StandLength,Width,StandWidth]);
 }
  
+// Inner plate
 difference() {
-    cylinder(h=10,r=43.5);
-    translate([0,0,2]) {
-        cylinder(h=8,r=42);
+    cylinder(h=PlateWidth,r=IR);
+    translate([0,0,Width]) {
+        cylinder(h=PlateWidth-Width,r=IR-Width);
     }
-    translate([-43.5,-1,0]){
-        cube([87,2,10]);
+    translate([-1*IR,-1*Width/2,0]){
+        cube([PipeID,Width,PlateWidth]);
         }
  
 }
 
-translate([-40,-46,0]) {
-    cube([2,23,15]);
+// Stand uprights
+// Note the StandLength/5 is completely arbitrary, but
+// works with the default parameters.  Should be geometrically
+// determined based on the point of the circle it touches.
+translate([-1*StandLength/3,-1*OR,0]) {
+    cube([Width,StandLength/5-Width,StandWidth]);
 }
 
-translate([-40,23,0]) {
-    cube([2,21,15]);
+translate([-1*StandLength/3,StandLength/5,0]) {
+    cube([Width,StandLength/5-Width,StandWidth]);
 }
 
-translate([38,-46,0]) {
-    cube([2,23,15]);
+translate([StandLength/3-Width,-1*OR,0]) {
+    cube([Width,StandLength/5-Width,StandWidth]);
 }
-translate([38,23,0]) {
-    cube([2,21,15]);
+translate([StandLength/3-Width,StandLength/5,0]) {
+    cube([Width,StandLength/5-Width,StandWidth]);
 }
