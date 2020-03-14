@@ -7,7 +7,7 @@
 VentOpening = 30; /* How far apart the clip into the vent needs to be */
 VentWidth = 17; /* Max width of internal part of vent */
 VentDepth = 19; /* How far we can hang over the vent */
-VentHeight = 7; /* How high the spacing between louvres is */
+VentHeight = 8; /* How high the spacing between louvres is */
 RadioWidth = 30; /* Width of clip on the radio is */
 RadioDepth = 17; /* Depth of the clip */
 RadioLength = 50; /* How long we want the clip to cover */

@@ -11,7 +11,9 @@ Wall = 5;
 
 in = 25.4;
 Depth = 5;
-Width = 7/16*in;
+// Width = 7/16*in;
+// Width = 10;
+Width = 3/8*in;
 Diameter = Width / cos(30);
 R = Diameter * (1 + Fudge/100) / 2;
 
