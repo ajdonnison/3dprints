@@ -11,8 +11,8 @@ $fs=1;
 BearingDiameter = 22;
 BearingID = 8;
 BearingHeight = 7;
-MinReelDiameter=48;
-MaxReelDiameter=55;
+MinReelDiameter=50;
+MaxReelDiameter=60;
 MaxIntrusion=10; // Maximum depth to penetrate into the reel hub
 WallThickness = 3;
 
