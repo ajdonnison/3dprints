@@ -15,7 +15,10 @@ difference() {
   union() {
     cylinder(r=MajorDiam/2, h=Step);
     translate([0, 0, Step]) {
-      cylinder(r=MinDiam/2, h=Step);
+      cylinder(r2=MinDiam/2, r1=MajorDiam/2, h=Step/2);
+    }
+    translate([0, 0, Step * 3 / 2]) {
+      cylinder(r1=MinDiam/2, r2=MajorDiam/2, h=Step/2);
     }
     translate([0, 0, Step*2]) {
       cylinder(r=MajorDiam/2, h=Step);
