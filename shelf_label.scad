@@ -3,10 +3,10 @@
  */
 
 Width = 70;
-Height = 27;
+Height = 29;
 Depth = 5;
-Thickness = 2.5;
-Overhang = 1.2;
+Thickness = 2;
+Overhang = 1;
 
 cube([Width, Height + 2 * Thickness, Thickness]);
 translate([0, 0, Thickness]) {
